@@ -4,7 +4,10 @@ const passport = require('passport');
 
 //add homepage here for the router
 router.get('/', function(req, res, next) {
-  res.redirect('/landing');
+  res.render('index', {title: 'Login'});
+});
+router.get('/landing', function(req, res, next) {
+  res.render('cocktails/landing', {title: 'Home'});
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -21,7 +24,7 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect: '/landing',
-    failureRedirect: '/login'
+    failureRedirect: '/'
   }
 ))
 
