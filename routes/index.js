@@ -4,11 +4,12 @@ const passport = require('passport');
 
 //add homepage here for the router
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'Login'});
+  res.render('index', {title: 'Login to Jigger'});
 });
 router.get('/landing', function(req, res, next) {
   res.render('cocktails/landing', {title: 'Home'});
 });
+
 
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
