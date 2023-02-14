@@ -1,2 +1,2 @@
-const Cocktail = require('../models/cocktail');
+// const Cocktail = require('../models/cocktail');
 
