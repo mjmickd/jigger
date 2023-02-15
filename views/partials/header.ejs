@@ -11,10 +11,8 @@
   <nav>
     <a href="/cocktails/landing" <%- title === 'Landing' ? 'class="active"' : '' %>>Home</a>
     <% if (user) { %>
-      <a href="/cocktails/search"	<%- title === 'Search Cocktails' ? 'class="active"' : '' %>>
+      <a href="/cocktails/search-page"	<%- title === 'Search Cocktails' ? 'class="active"' : '' %>>
       Find a Cocktail</a>
-      <a href="/cocktails/index" <%- title === 'Cocktail Library' ? 'class="active"' : '' %>>Cocktail Library</a>
-      <a href="/cocktails/profile" <%- title === 'Your Profile' ? 'class="active"' : '' %>>Your Profile</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
