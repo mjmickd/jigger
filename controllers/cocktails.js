@@ -109,7 +109,21 @@ function landing(req,res) {
 //     res.render('cocktails/new', { title: 'Add Cocktail' }); 
     
 
-
+function showDrink(req, res, next) {
+    // Note the cool "dot" syntax to query for a movie with a
+    // review nested within an array
+    Drinks.findOne({
+      'idDrink._id': req.params.id,
+      'reviews.user': req.user._id
+    }).then(function(movie) {
+      if (!drinks) return res.render('Not-Found');
+      movie.save().then(function() {
+        res.render(`${idDrink._id}`);
+      }).catch(function(err) {
+        return next(err);
+      });
+    });
+  }
 
 
 
