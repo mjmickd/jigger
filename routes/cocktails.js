@@ -8,6 +8,9 @@ router.get('/search-page', cocktailsCtrl.searchPage);
 
 router.post('/search', cocktailsCtrl.search);
 
+router.get('/landing', cocktailsCtrl.landing);
+
+
 
 module.exports = router;
 
