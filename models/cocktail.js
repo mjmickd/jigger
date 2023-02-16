@@ -28,7 +28,6 @@ const cocktailSchema = new Schema({
     image: {
         type: String,
         required: true,
-        //check API for this
     },
     cocktail: {
         type: String, 
@@ -45,27 +44,22 @@ const cocktailSchema = new Schema({
     recipe1: {
         type: String,
         default: null
-        //check API for this 
     },
     recipe2: {
         type: String,
         default: null
-        //check API for this 
     },
     recipe3: {
         type: String,
         default: null
-        //check API for this 
     },
     recipe4: {
         type: String,
         default: null
-        //check API for this 
     },
     recipe5: {
         type: String,
         default: null
-        //check API for this 
     },
     favorites: [{
         type: Schema.Types.ObjectId,

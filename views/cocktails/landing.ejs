@@ -1,5 +1,43 @@
 <%- include('../partials/header') %>
 
+<section id="cocktail-page">
+    <div>Title: </div>
+    <div><%= cocktail.cocktail %></div>
+    <div></div>
+    <div>Image: </div>
+    <div><%= cocktail.image %></div>
+    <div>Instructions: </div>
+    <div><%= cocktail.instructions %></div>
+    <div>Ingredients</div>
+    <div><%= cocktail.recipe1 %></div>
+    <div><%= cocktail.recipe2 %></div>
+    <div><%= cocktail.recipe3 %></div>
+    <div><%= cocktail.recipe4 %></div>
+    <div><%= cocktail.recipe5 %></div>
+    <div>Do you Like This Cocktail?</div>
+    <div><%= movie.favorites ? 'Yes' : 'Nope'%></div>
+
+  </section>
+
+  <br><br><h2>Reviews</h2>
+  <% if (user) { %>
+    <form id="add-review-form" method="POST"
+      action="/cocktails/<%= cocktail._id %>/cocktails">
+      <label>Comments:</label>
+      <textarea name="content"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <input type="submit" value="Add Review">
+    </form>
+  <% } %>
+
+
 <% if (cocktails.length) { %>
     <% cocktails.forEach(function(c) { %>
         <table>
@@ -16,6 +54,7 @@
                   <td>
                     <%= c.cocktail %>
                     <form method="POST" action="/cocktails">
+                        <input type="submit" value="Comments">
                         <input type="submit" value="Add to Favorites">
                     </form>
                 </td>
@@ -38,6 +77,8 @@
     <h5>Search for a Drink</h5>
     <a href="/cocktails/search">Search</a>
   <% } %>
+
+
 
 
 <%- include('../partials/footer')%>
