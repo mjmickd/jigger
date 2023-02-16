@@ -1,3 +1,14 @@
+* {
+color: firebrick;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: purple
+}
+
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -15,5 +26,9 @@ a {
 }
 
 .login img {
-  height: 30px;
+  height: 30vh;
+}
+
+.drink-image {
+  height: 25vh;
 }
