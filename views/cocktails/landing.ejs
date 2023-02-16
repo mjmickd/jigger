@@ -14,28 +14,19 @@
             <tbody>
                 <tr>
                   <td>
-                    <%= drink.strDrink %>
+                    <%= c.cocktail %>
                     <form method="POST" action="/cocktails">
-                        <input type="hidden" name="cocktail" value="<%=drink.strDrink %>">
-                        <input type="hidden" name="cocktailId" value="<%=drink.idDrink %>" >
-                        <input type="hidden" name="instructions" value="<%=drink.strInstructions %>" >
-                        <input type="hidden" name="image" value="<%= drink.strDrinkThumb %>" >
-                        <input type="hidden" name="recipe1" value="<%=drink.strIngredient1%>"> 
-                        <input type="hidden" name="recipe2" value="<%=drink.strIngredient2%>"> 
-                        <input type="hidden" name="recipe3" value="<%=drink.strIngredient3%>"> 
-                        <input type="hidden" name="recipe4" value="<%=drink.strIngredient4%>"> 
-                        <input type="hidden" name="recipe5" value="<%=drink.strIngredient5%>"> 
                         <input type="submit" value="Add to Favorites">
                     </form>
                 </td>
-                  <td><img class="drink-image"src="<%= drink.strDrinkThumb %>" alt="drink-image"></td>
-                  <td><%= drink.strInstructions %></td>
+                  <td><img class="drink-image"src="<%= c.image %>" alt="drink-image"></td>
+                  <td><%= c.instructions %></td>
                   <td>
-                      <% if (drink.strIngredient1) { %> <td> <%=drink.strIngredient1%> </td> <% } %>
-                      <% if (drink.strIngredient2) { %> <td> <%=drink.strIngredient2%> </td> <% } %>
-                      <% if (drink.strIngredient3) { %> <td> <%=drink.strIngredient3%> </td> <% } %>
-                      <% if (drink.strIngredient4) { %> <td> <%=drink.strIngredient4%> </td> <% } %>
-                      <% if (drink.strIngredient5) { %> <td> <%=drink.strIngredient5%> </td> <% } %>
+                      <% if (c.recipe1) { %> <td> <%=c.recipe1%> </td> <% } %>
+                      <% if (c.recipe2) { %> <td> <%=c.recipe2%> </td> <% } %>
+                      <% if (c.recipe3) { %> <td> <%=c.recipe3%> </td> <% } %>
+                      <% if (c.recipe4) { %> <td> <%=c.recipe4%> </td> <% } %>
+                      <% if (c.recipe5) { %> <td> <%=c.recipe5%> </td> <% } %>
                   </td>
               </tr>
           </tbody>
@@ -45,6 +36,7 @@
 
   <% } else { %>
     <h5>Search for a Drink</h5>
+    <a href="/cocktails/search">Search</a>
   <% } %>
 
 
