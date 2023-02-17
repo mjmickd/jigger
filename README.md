@@ -16,7 +16,7 @@
 
 **App Look** 
 ! [Login-page] public/images/Login-page.png
-![Landing-page]public/images/Landing-page%20.png
+<img width="1345" alt="Landing-page" src="https://user-images.githubusercontent.com/108112112/219699929-c159fa7f-1c61-49e7-bf0b-f6c54b3ff9f4.png">
 
 
 **Technologies Used**
