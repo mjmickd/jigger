@@ -1,57 +1,84 @@
 * {
-color: firebrick;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
 body > nav {
   grid-area: nav;
-  background-color: purple
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  size: 10vh;
+  align-items: center;
+  padding:20px;
+  font-size: 6vh;
+  overflow-y: scroll;
 }
 
-
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+nav > a {
+  margin: 20px;
+  text-decoration: dashed;
+  padding: 10px;
+  border-radius: 5px;
 }
-
-a {
-  color: #00B7FF;
-}
-
 .login {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   height: 34px;
 }
 
 .login img {
-  height: 30vh;
+  height: 6vh;
 }
+
+body {
+  font-family:'Courier New', Courier, monospace;
+  background-image: url("https://images.pexels.com/photos/4667030/pexels-photo-4667030.jpeg?auto=compress&cs=tinysrgb&w=800");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white; 
+  margin: 10%
+}
+
+a {
+  color: white;
+  justify-content: center;
+  margin-right: 40vh;
+  
+}
+
+#index-page {
+  justify-content: center;
+  text-align: center;
+}
+
+#landing-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
 
 .drink-image {
   height: 25vh;
+  border: #00B7FF 2vh;
 }
 
-#new-form *,
-#add-review-form *,
-#add-performer-form * {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-}
 
-#add-review-form,
-#add-performer-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-}
 
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
-  width: 10rem;
-  grid-column: 2 / 3;
-}
+
+
 
