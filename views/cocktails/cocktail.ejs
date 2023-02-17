@@ -1,91 +1,35 @@
 <%-include('../partials/header')%>
 
-<!-- <section id="cocktail-page">
-    <div>Title: </div>
+<section id="cocktail-profile">
+    <div>Cocktail: </div>
     <div><%= cocktail.cocktail %></div>
-    <div></div>
-    <div>Image: </div>
+    <div> image: </div>
     <div><%= cocktail.image %></div>
-    <div>Instructions: </div>
+    <div>Directiosn: </div>
     <div><%= cocktail.instructions %></div>
-    <div>Ingredients</div>
+    <div>Cocktail Ingredients: </div>
     <div><%= cocktail.recipe1 %></div>
     <div><%= cocktail.recipe2 %></div>
     <div><%= cocktail.recipe3 %></div>
     <div><%= cocktail.recipe4 %></div>
     <div><%= cocktail.recipe5 %></div>
-    <div>Do you Like This Cocktail?</div>
-    <div><%= movie.favorites ? 'Yes' : 'Nope'%></div>
+</section>
 
-  </section> -->
-
-  <!-- <br><br><h2>Reviews</h2>
-<% if (user) { %>
-  <form id="add-review-form" method="POST"
-    action="/cocktails/<%= cocktail._id %>/cocktails">
-    <label>Comments:</label>
-    <textarea name="content"></textarea>
-    <label>Rating:</label>
-    <select name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5" selected>5</option>
-    </select>
-    <input type="submit" value="Add Review">
-  </form>
-<% } %> -->
-
-<% if (movie.reviews.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let total = 0 %>
-      <% cocktail.reviews.forEach(function(c) { %>
-        <% total += c.rating %>
-        <tr>
-          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"> <%= r.userName %></td>
-          <td><%= c.createdAt.toLocaleDateString() %></td>
-          <td><%= c.content %></td>
-          <td><%= c.rating %></td>
-          <td>
-            <% if (user?._id.equals(c.user)) { %>
-              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <% } %>
-          </td>
-        </tr>
-      <% }); %>
-      <tr>
-        <td colspan="2"></td>
-        <td>
-          <strong>
-            <%= (total / cocktail.reviews.length).toFixed(1) %>
-          </strong>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Reviews Yet</h5>
-<% } %>
-
-
-
-
-
-
-
-</section>;
-
+<!-- new markup below -->
+<br><br><h2>Comments</h2>
+<form id="add-review-form" method="POST"
+  action="/movies/<%= movie._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+ 
 <%-include('../partials/footer')%>

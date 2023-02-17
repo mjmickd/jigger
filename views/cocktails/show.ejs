@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cocktail Name</th>
+                <th>Image</th>
+                <th>Instructions</th>
+                <th>Recipe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h3><%= cocktail.cocktail %></h3>
+                    <% if (!cocktail.favorites.some(id => user._id.equals(id))) { %>
+                    <form method="POST" action="/cocktails">
+                        <input type="hidden" value="<%=cocktail.cocktailId%>" name="cocktailId">
+                        <input type="submit" value="Add to Favorites">
+                    </form>
+                    <% }; %>  
+                </td>
+                <td><img class="drink-image"src="<%= cocktail.image %>" alt="drink-image"></td>
+                <td><%= cocktail.instructions %></td>
+                <td>
+                    <% if (cocktail.recipe1) { %> <td> <%= cocktail.recipe1 %> </td> <% } %>
+                    <% if (cocktail.recipe2) { %> <td> <%= cocktail.recipe2 %> </td> <% } %>
+                    <% if (cocktail.recipe3) { %> <td> <%= cocktail.recipe3 %> </td> <% } %>
+                    <% if (cocktail.recipe4) { %> <td> <%= cocktail.recipe4 %> </td> <% } %>
+                    <% if (cocktail.recipe5) { %> <td> <%= cocktail.recipe5 %> </td> <% } %>
+                </td>
+            </tr>
+        </tbody>          
+
+
+
+
+
+
+<%- include('../partials/footer') %>

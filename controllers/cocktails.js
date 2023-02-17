@@ -14,7 +14,10 @@ module.exports= {
     search,
     searchPage,
     landing,
-    addToFavorites
+    addToFavorites,
+    // addComment
+    favorites,
+    removeFromFavorites
     
 };
 
@@ -60,7 +63,7 @@ async function addToFavorites(req,res) {
                         res.redirect('/cocktails/landing');
                 })
                 }
-            } )
+            })
         } else {
             const cocktail = new Cocktail(req.body);
             cocktail.favorites.push(req.user._id)
@@ -75,14 +78,47 @@ async function addToFavorites(req,res) {
     }
 }
 
-function show(req, res) {
-    Cocktail.findById(req.params.id)
-    .exec(function(err, cocktails) {
-        Favorites.find(
-            {_id: {$nin, }}
-        )
+function show(req,res) {
+    Cocktail.findById(req.params.id, function(err, cocktail) {
+        res.render('cocktails/show', {title: 'Detail', cocktail})
+    })
+     
+
+}
+function favorites(req, res) {
+    Cocktail.find({favorites: req.user._id}, function(err, cocktails) {
+        res.render('cocktails/landing', {title: 'My Favorites', cocktails})
     })
 }
+
+function removeFromFavorites(req, res) {
+    Cocktail.findOne({cocktailId: req.body.cocktailId}, function(err, cocktail) {
+        const updatedFavorites = cocktail.favorites.filter(u => !u.equals(req.user._id));
+        cocktail.favorites = updatedFavorites;
+        cocktail.save(function() {
+            res.redirect('/cocktails/landing')
+        }) 
+    });
+};
+// function addComment(req, res) {
+//     Cocktail.findById(req.params.id)
+//     .exec(function(err, cocktail){
+//         res.render('cocktails/cocktail', {
+//         title: 'Add Comment',
+//         cocktail
+//         });
+//     });
+// };
+
+
+// function show(req, res) {
+//     Cocktail.findById(req.params.id)
+//     .exec(function(err, cocktails) {
+//         Favorites.find(
+//             {_id: {$nin, }}
+//         )
+//     })
+// }
 
 
 
