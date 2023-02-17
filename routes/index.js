@@ -3,7 +3,6 @@ var router = express.Router();
 const passport = require('passport');
 const cocktailsCtrl = require('../controllers/cocktails');
 
-//add homepage here for the router
 router.get('/', function(req, res, next) {
   res.render('index', {title: 'Login to Jigger'});
 });
@@ -11,11 +10,9 @@ router.get('/landing', cocktailsCtrl.landing);
 
 
 router.get('/auth/google', passport.authenticate(
-  // Which passport strategy is being used?
   'google',
   {
     scope: ['profile', 'email'],
-    // Optional
     prompt: 'select_account'
   }
 ));
@@ -30,7 +27,6 @@ router.get('/oauth2callback', passport.authenticate(
 
 router.get('/logout', function(req, res) {
   req.logout(function() {
-    // Change path for your "landing" page
     res.redirect('/');
   });
 });

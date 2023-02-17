@@ -9,13 +9,10 @@ const { Z_SYNC_FLUSH, Z_FILTERED } = require('zlib');
 module.exports= {
     index,
     show,
-    //new: newCocktail,
-    // create,
     search,
     searchPage,
     landing,
     addToFavorites,
-    // addComment
     favorites,
     removeFromFavorites
     
@@ -52,7 +49,7 @@ async function addToFavorites(req,res) {
         const drinkInDb = await Cocktail.exists({cocktailId: req.body.cocktailId})
         if(drinkInDb) {
             Cocktail.findOne({cocktailId: req.body.cocktailId}, function(err, cocktail) {
-                console.log(cocktail, 'cocktail')
+
                 if (cocktail.favorites.some(f => f.equals(req.user._id))) {
                     res.redirect('/cocktails/landing');
                 } else {
@@ -68,13 +65,11 @@ async function addToFavorites(req,res) {
             const cocktail = new Cocktail(req.body);
             cocktail.favorites.push(req.user._id)
             cocktail.save(function(err) { 
-                console.log(err, 'test')
                 if (err) return res.redirect ('/cocktails/search');
                 res.redirect('/cocktails/landing');
             })
         }
     } catch(err) {
-        console.log(err)
     }
 }
 
@@ -100,38 +95,8 @@ function removeFromFavorites(req, res) {
         }) 
     });
 };
-// function addComment(req, res) {
-//     Cocktail.findById(req.params.id)
-//     .exec(function(err, cocktail){
-//         res.render('cocktails/cocktail', {
-//         title: 'Add Comment',
-//         cocktail
-//         });
-//     });
-// };
 
 
-// function show(req, res) {
-//     Cocktail.findById(req.params.id)
-//     .exec(function(err, cocktails) {
-//         Favorites.find(
-//             {_id: {$nin, }}
-//         )
-//     })
-// }
-
-
-
-// function create(req, res) {
-//     Cocktail.findById(req.params.id, function(err, cocktail){
-//         req.body.user = req.user._id;
-//         req.body.userName = req.user.name;
-//         cocktail.Comments.push(req.body);
-//         cocktail.save(function(err) {
-//             res.redirect(`/cocktails/${cocktail.id}`);
-//         });
-//     });
-// }
 
  
 
