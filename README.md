@@ -16,6 +16,7 @@
 
 **App Look** 
 ! [Login-page] public/images/Login-page.png
+file:///Users/michaelmcdonald/Desktop/Landing-page%20.png
 
 
 **Technologies Used**
