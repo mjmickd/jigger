@@ -1,8 +1,8 @@
-# Jigger Applicatioon
+**Jigger Application**
 
     > An application that will allow you to browse cocktails, with the cocktail name, an image of the cocktail, the instructions of how to make the cocktail, and the ingredients used while being able to add it to your favorites or delete it from your favorites. 
 
-## How the Application Works
+**How the Application Works**
 
 > you will be able to login as a user, creating an account. 
 
@@ -14,21 +14,21 @@
 
 >Once you're able to see the cocktail, you're going to be able to delete it from your favorite cocktails. 
 
-### App Look 
-! [Login Page] public/images/Login-page.png
+**App Look** 
+! [Login-page] public/images/Login-page.png
 
 
-#### Technologies Used
+**Technologies Used**
     -Node.js 
     -Express
     -Mongoose
     -CSS
     
-#### Check out the Application
+**Check out the Application**
 
-click here to check it out the App: 
+click here to check it out the App: https://jigger.herokuapp.com/
 
-Click here to check out the Project Planning: 
+Click here to check out the Project Planning: https://trello.com/b/2AG9SxWL/project-2-jigger
 
 Next Steps: 
 
