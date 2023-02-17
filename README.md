@@ -16,7 +16,7 @@
 
 **App Look** 
 ! [Login-page] public/images/Login-page.png
-![Landing-page] https://github.com/mjmickd/jigger/blob/main/public/images/Landing-page%20.png
+![Landing-page]public/images/Landing-page%20.png
 
 
 **Technologies Used**
